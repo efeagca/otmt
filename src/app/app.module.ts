@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { NewprojectComponent } from './newproject/newproject.component';
 import { FriendlistComponent } from './friendlist/friendlist.component';
 import { ChatscreenComponent } from './chatscreen/chatscreen.component';
 
@@ -16,7 +18,10 @@ import { ChatscreenComponent } from './chatscreen/chatscreen.component';
     LoginComponent,
     RegisterComponent,
     FriendlistComponent,
-    ChatscreenComponent
+    ChatscreenComponent,
+    ProjectsComponent,
+    NewprojectComponent,
+    FriendlistComponent
   ],
   imports: [
     BrowserModule,
