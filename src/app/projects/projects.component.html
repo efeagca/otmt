@@ -1,11 +1,47 @@
-<div class="container">
-    <div class="link-group">
-        <a href="">Project</a>
-        <a href="">My Tasks</a>
+<div class="clearfix">
+    <div class="sidebar">
+        <app-friendlist></app-friendlist>
     </div>
-    <div class="bg-danger" style="width: 1000px; height: 500px; padding: 5px;">
-        <div id="project-container">
+    
+    <div id="cont">
+        <div class="button-group">
+            <button (click)="showProject()" class="btn btn-light">Project</button>
+            <button (click)="showTasks()" class="btn btn-light">My Tasks</button>
+        </div>
+        <div style="width: 1000px; height: 500px; padding: 5px;">
+            <div id="projects-container" class="d-none">
+                <div class="project-container">
+                    <label class="text-muted">Proje Adı</label>
+                    <p>Denemeler</p>
+                    <label class="text-muted">Description</label>
+                    <p>Açıklamalar</p>
+                </div>
+            </div>
+            <div id="myTasks-container">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                          <th>Task</th>
+                          <th>Project Name</th>
+                          <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mustafanın yapacağı kodlar.</td>
+                            <td>Perifecto1</td>
+                            <td>To Do</td>
+                        </tr>
+                        <tr>
+                            <td>Mustafanın yapacağı kodlar.</td>
+                            <td>Perifecto1</td>
+                            <td>To Do</td>
+                        </tr>
+                    </tbody>
 
+                </table>
+            </div>
         </div>
     </div>
 </div>
+
