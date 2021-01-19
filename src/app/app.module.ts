@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FriendlistComponent } from './friendlist/friendlist.component';
+import { ChatscreenComponent } from './chatscreen/chatscreen.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FriendlistComponent } from './friendlist/friendlist.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    FriendlistComponent
+    FriendlistComponent,
+    ChatscreenComponent
   ],
   imports: [
     BrowserModule,
