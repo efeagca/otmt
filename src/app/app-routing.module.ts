@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ChatscreenComponent } from './chatscreen/chatscreen.component';
 import { LoginComponent } from './login/login.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { RegisterComponent } from './register/register.component';
@@ -8,6 +9,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path:'login', component: LoginComponent},
   { path:'register', component: RegisterComponent},
+  { path:'chatscreen', component: ChatscreenComponent},
   { path:'projects', component: ProjectsComponent}
 ];
 

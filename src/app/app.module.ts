@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { NewprojectComponent } from './newproject/newproject.component';
 import { FriendlistComponent } from './friendlist/friendlist.component';
+import { ChatscreenComponent } from './chatscreen/chatscreen.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,8 @@ import { FriendlistComponent } from './friendlist/friendlist.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
+    FriendlistComponent,
+    ChatscreenComponent,
     ProjectsComponent,
     NewprojectComponent,
     FriendlistComponent
