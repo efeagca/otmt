@@ -1,0 +1,30 @@
+#login-container{
+    width: 455px;
+    height: 400px;
+    margin-left: -227px;
+    margin-top: -200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(1, 22, 70, .39);
+    border-radius: 10%;
+}
+
+#login-container>div{
+    margin-top: 20px;
+}
+
+input{
+    margin-top: 1rem;
+}
+
+.btn{
+    background-color: #011646;
+    color: white;
+    margin: 5px;
+    width: 47%;
+}
+
+.button-group{
+    margin-top: 20px;
+}
