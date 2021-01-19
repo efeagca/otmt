@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { FriendlistComponent } from './friendlist/friendlist.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ProjectsComponent } from './projects/projects.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    FriendlistComponent
   ],
   imports: [
     BrowserModule,
