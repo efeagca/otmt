@@ -10,6 +10,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { NewprojectComponent } from './newproject/newproject.component';
 import { FriendlistComponent } from './friendlist/friendlist.component';
 import { ChatscreenComponent } from './chatscreen/chatscreen.component';
+import { ProjectComponent } from './projects/project/project.component';
+import { MytasksComponent } from './projects/mytasks/mytasks.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ChatscreenComponent } from './chatscreen/chatscreen.component';
     ChatscreenComponent,
     ProjectsComponent,
     NewprojectComponent,
-    FriendlistComponent
+    FriendlistComponent,
+    ProjectComponent,
+    MytasksComponent
   ],
   imports: [
     BrowserModule,
