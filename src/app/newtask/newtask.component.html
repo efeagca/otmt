@@ -1,0 +1,52 @@
+<div id="newtask-container" class="container">
+    <h3 class="d-inline-block">New Task</h3>
+    <hr>
+    <input class="form-control" type="text" id="taskTitleInput" placeholder="Task Title">
+    <div id="assignSelect" class="container">
+        <i class="fas fa-user " id="assignIcon"></i>
+        <select (change)="onChangeAssignSelect($event)" class="form-select fa" >
+            <option selected>Unassigned</option>
+            <option [value]="m.value" *ngFor="let m of unSelectedTeamMembers">
+                 {{m.name}}
+             </option>
+          
+            <i class="fas fa-user"></i>
+        </select>
+    </div>
+    <div id="assignedDisplayer" class="container">
+        <div class="assignGroup" *ngFor="let tm of selectedTeamMembers">
+            {{tm.name}}
+            <button  (click)="removeAssignedButton(tm.value)" class="btn btn-outline-info assignRemBtn"><i class="fas fa-user-minus"></i></button>
+        </div>
+        
+    </div>
+    <hr>
+
+
+    <div style="margin-bottom: 3px;">
+        <label for="taskStateInput d-inline-block" style="margin-right: 20px;">State</label>
+        <select class="form-select d-inline-block" id="stateSelect" aria-label="Default select example">
+            <option selected>To Do</option>
+            <option value="1">To Do</option>
+        </select>
+        <div class="verticalLine" > </div>
+        <label style="margin-right: 20px;">Project</label>
+        <label >Project 1</label>
+        <div class="verticalLine" > </div>
+        <label for="taskStateInput d-inline-block" style="margin-right: 20px;">Priority</label>
+        <select class="form-select d-inline-block" id="priorSelect" aria-label="Default select example">
+            <option selected>1</option>
+            <option value="1">1</option>
+            <option value="1">2</option>
+            <option value="1">3</option>
+            <option value="1">4</option>
+        </select>
+    </div>
+    <hr>
+
+    <div class="form-floating">
+        <textarea class="form-control" id="taskDesc" placeholder="Description" ></textarea>
+    </div>
+    <a routerLink="/project"><button class="btn btn-primary float-right">Create</button></a>
+
+</div>
