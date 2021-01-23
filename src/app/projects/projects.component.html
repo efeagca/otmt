@@ -1,11 +1,16 @@
-<div class="container">
-    <div class="link-group">
-        <a href="">Project</a>
-        <a href="">My Tasks</a>
+<div class="clearfix">
+    <div class="sidebar">
+        <app-friendlist></app-friendlist>
     </div>
-    <div class="bg-danger" style="width: 1000px; height: 500px; padding: 5px;">
-        <div id="project-container">
-
+    
+    <div id="cont">
+        <div class="button-group">
+            <a routerLink="/projects/project"><button class="btn btn-light">Project</button></a>
+            <a routerLink="/projects/mytasks"><button class="btn btn-light">My Tasks</button></a>
+        </div>
+        <div style="width: 1000px; height: 500px; padding: 5px;">
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>
+

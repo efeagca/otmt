@@ -11,6 +11,9 @@ import { ProjectsComponent } from './projects/projects.component';
 import { NewprojectComponent } from './newproject/newproject.component';
 import { FriendlistComponent } from './friendlist/friendlist.component';
 import { NewtaskComponent } from './newtask/newtask.component';
+import { ChatscreenComponent } from './chatscreen/chatscreen.component';
+import { ProjectComponent } from './projects/project/project.component';
+import { MytasksComponent } from './projects/mytasks/mytasks.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { NewtaskComponent } from './newtask/newtask.component';
     ProjectsComponent,
     NewprojectComponent,
     FriendlistComponent,
-    NewtaskComponent
+    NewtaskComponent,
+    ChatscreenComponent,
+    ProjectComponent,
+    MytasksComponent
   ],
   imports: [
     BrowserModule,
