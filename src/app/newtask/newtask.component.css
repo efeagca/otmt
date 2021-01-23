@@ -1,8 +1,8 @@
 #newtask-container{
     width: 700px;
-    height: 400px;
-    margin-left: -300px;
-    margin-top: -200px;
+    height: 800px;
+    margin-left: -350px;
+    margin-top: -400px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -88,7 +88,21 @@ hr{
     border: 1px solid #ced4da;
     border-radius: .25rem;
 }
+#verticalLineAssignGroup{
+    border-left: groove  ;
+    width: 1px;
+    height: 30px;
+    display: inline;
+    margin-left:10px;
+    margin-right:10px;
+    float:right;
 
+}
+#effortSelect{
+    display:inline;
+    float:right;
+    
+}
 
 .assignGroup{
     margin-bottom: 5px;
@@ -110,3 +124,20 @@ hr{
     padding-right:3px;
     font-size: 1rem;
 }
+.custom-day {
+    text-align: center;
+    padding: 0.185rem 0.25rem;
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+  }
+  .custom-day.focused {
+    background-color: #e6e6e6;
+  }
+  .custom-day.range, .custom-day:hover {
+    background-color: rgb(2, 117, 216);
+    color: white;
+  }
+  .custom-day.faded {
+    background-color: rgba(2, 117, 216, 0.5);
+  }

@@ -15,6 +15,7 @@ const routes: Routes = [
   { path:'register', component: RegisterComponent},
   { path:'chatscreen', component: ChatscreenComponent},
   {path:'newproject', component: NewprojectComponent},
+  {path:'nt', component: NewtaskComponent},
   { path:'projects', component: ProjectsComponent, children:[
       {path:'project', component:ProjectComponent},
       {path:'mytasks', component:MytasksComponent}
