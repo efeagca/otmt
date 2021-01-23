@@ -1,0 +1,12 @@
+.button-group button{
+    position: absolute;
+    bottom: 5px;
+}
+
+.button-group{
+    position: relative;
+}
+
+.cont{
+    height: 100%;
+}

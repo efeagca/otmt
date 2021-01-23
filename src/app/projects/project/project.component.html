@@ -1,8 +1,10 @@
 <div id="projects-container">
-    <div class="project-container">
+    <a routerLink="/newproject" class="btn btn-primary" style="display: block; margin-bottom: 10px;"><p>Create New Project</p></a>
+    <div class="project-container" *ngFor="let p of projects">
         <label class="text-muted">Proje Adı</label>
-        <p>Denemeler</p>
+        <p>{{p.name}}</p>
         <label class="text-muted">Description</label>
-        <p>Açıklamalar</p>
+        <p>{{p.description}}</p>
     </div>
+    
 </div>

@@ -2,14 +2,14 @@
     <div class="container">
         <a routerLink="/"><button class="btn d-inline-block"><i class="fas fa-arrow-circle-left"></i></button></a>
         <h3 class="d-inline-block">Register</h3>
-        <input class="form-control" type="text" name="" id="nameInput" placeholder="Name">
-        <input class="form-control" type="text" name="" id="surnameInput" placeholder="Surname">
-        <input class="form-control" type="email" id="emailInput" placeholder="E-mail">
-        <input class="form-control" type="password" name="" id="passwordInput" placeholder="Password">
-        <input class="form-control" type="password" name="" id="passwordAgainInput" placeholder="Password">
+        <input class="form-control" type="text" name="" id="nameInput" placeholder="Name" [(ngModel)]="name">
+        <input class="form-control" type="text" name="" id="surnameInput" placeholder="Surname" [(ngModel)]="surname">
+        <input class="form-control" type="email" id="emailInput" placeholder="E-mail" [(ngModel)]="email">
+        <input class="form-control" type="password" name="" id="passwordInput" placeholder="Password" [(ngModel)]="password">
+        <input class="form-control" type="password" name="" id="passwordAgainInput" placeholder="Password" [(ngModel)]="passwordCheck">
 
         <div class="button-group">
-            <button class="btn btn-lg">Register</button>
+            <button class="btn btn-lg" (click)="register()">Register</button>
         </div>
     </div>
     

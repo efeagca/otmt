@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   loginClicked():void{
     
     if(this.userService.checkForLogin(this.email,this.password)){
+      document.cookie = `email = ${this.email}`;
       this.router.navigateByUrl('/projects/project');
     }
   }
