@@ -15,8 +15,8 @@
     </div>
     <div id="assignedDisplayer" class="container">
         <div class="assignGroup" *ngFor="let tm of selectedTeamMembers">
-            {{tm.name}}
             <button  (click)="removeAssignedButton(tm.value)" class="btn btn-outline-info assignRemBtn"><i class="fas fa-user-minus"></i></button>
+            {{tm.name}}
         </div>
 
     </div>

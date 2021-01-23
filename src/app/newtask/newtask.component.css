@@ -93,7 +93,7 @@ hr{
 .assignGroup{
     margin-bottom: 5px;
     padding:.375rem .75rem;
-
+    
 }
 
 #assignedDisplayer{
@@ -103,4 +103,10 @@ hr{
 }
 #assignedDisplayer:empty { 
     border: none;
+    font:400 13.3333px Arial;
+}
+.assignRemBtn{
+    padding-left:3px;
+    padding-right:3px;
+    font-size: 1rem;
 }
