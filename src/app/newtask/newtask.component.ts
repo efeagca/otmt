@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {NgbDate, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-newtask',
@@ -10,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class NewtaskComponent implements OnInit {
 
-  constructor() { }
+  constructor(calendar: NgbCalendar) { 
+      this.fromDate = calendar.getToday();
+  }
  
   teamMembers=[
     {name:"Gökçin Sezgin < gokcin@gmail.com >",value:'1'},
@@ -20,7 +22,9 @@ export class NewtaskComponent implements OnInit {
   public selectedTeamMembers=[];
   public unSelectedTeamMembers=this.teamMembers;
   public removeFromAssignned:string;
-
+  public unassigned="Unassigned";
+  public assigned="--";
+  
   public onChangeAssignSelect(event):void{
 
     this.selectedTeamMembers.push(this.teamMembers[Object.keys(this.teamMembers).find(key => this.teamMembers[key].value ===  event.target.value.toString())]);
@@ -31,6 +35,32 @@ export class NewtaskComponent implements OnInit {
   public removeAssignedButton(value){
     this.selectedTeamMembers =this.selectedTeamMembers.filter(o => o.value !== value.toString());
     this.unSelectedTeamMembers.push(this.teamMembers[Object.keys(this.teamMembers).find(key => this.teamMembers[key].value ===  value.toString())]);
+  }
+
+  hoveredDate: NgbDate | null = null;
+
+  fromDate: NgbDate;
+  toDate: NgbDate | null = null;
+  onDateSelection(date: NgbDate) {
+    if (!this.fromDate && !this.toDate) {
+      this.fromDate = date;
+    } else if (this.fromDate && !this.toDate && date.after(this.fromDate)) {
+      this.toDate = date;
+    } else {
+      this.toDate = null;
+      this.fromDate = date;
+    }
+  }
+  isHovered(date: NgbDate) {
+    return this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) && date.before(this.hoveredDate);
+  }
+
+  isInside(date: NgbDate) {
+    return this.toDate && date.after(this.fromDate) && date.before(this.toDate);
+  }
+
+  isRange(date: NgbDate) {
+    return date.equals(this.fromDate) || (this.toDate && date.equals(this.toDate)) || this.isInside(date) || this.isHovered(date);
   }
 
   ngOnInit(): void {

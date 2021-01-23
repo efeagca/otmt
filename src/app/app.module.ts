@@ -15,6 +15,8 @@ import { NewtaskComponent } from './newtask/newtask.component';
 import { ChatscreenComponent } from './chatscreen/chatscreen.component';
 import { ProjectComponent } from './projects/project/project.component';
 import { MytasksComponent } from './projects/mytasks/mytasks.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DatepickerRangeComponent } from './datepicker-range/datepicker-range.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +30,15 @@ import { MytasksComponent } from './projects/mytasks/mytasks.component';
     NewtaskComponent,
     ChatscreenComponent,
     ProjectComponent,
-    MytasksComponent
+    MytasksComponent,
+    DatepickerRangeComponent
   ],
   imports: [
+    
     BrowserModule,
     FormsModule,
     AppRoutingModule, 
-    CommonModule
+    CommonModule, NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

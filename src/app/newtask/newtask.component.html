@@ -5,7 +5,9 @@
     <div id="assignSelect" class="container">
         <i class="fas fa-user " id="assignIcon"></i>
         <select (change)="onChangeAssignSelect($event)" class="form-select fa" >
-            <option selected>Unassigned</option>
+            <option  *ngIf="selectedTeamMembers.length===0" selected >{{unassigned}}</option>
+            <option  *ngIf="selectedTeamMembers.length!==0" selected >{{assigned}}</option>
+
             <option [value]="m.value" *ngFor="let m of unSelectedTeamMembers">
                  {{m.name}}
              </option>
@@ -15,13 +17,24 @@
     </div>
     <div id="assignedDisplayer" class="container">
         <div class="assignGroup" *ngFor="let tm of selectedTeamMembers">
-            {{tm.name}}
             <button  (click)="removeAssignedButton(tm.value)" class="btn btn-outline-info assignRemBtn"><i class="fas fa-user-minus"></i></button>
+            {{tm.name}}
+            <div id="effortSelect">
+                <p style="display:inline;margin-right: 5px;">Effort</p>
+                <select  class="form-select" >
+                    <option >100% </option>
+                    <option >75% </option>
+                    <option >50% </option>
+                    <option >25% </option>
+                    <i class="fas fa-user"></i>
+                </select>
+            </div>
+            <div id="verticalLineAssignGroup"></div>
+
         </div>
 
     </div>
     <hr>
-
 
     <div style="margin-bottom: 3px;">
         <label for="taskStateInput d-inline-block" style="margin-right: 20px;">State</label>
@@ -43,10 +56,31 @@
         </select>
     </div>
     <hr>
+    <div class="container mb-3 text-center"  >
+        <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
+        </ngb-datepicker>
+        <ng-template #t let-date let-focused="focused">
+          <span class="custom-day"
+                [class.focused]="focused"
+                [class.range]="isRange(date)"
+                [class.faded]="isHovered(date) || isInside(date)"
+                (mouseenter)="hoveredDate = date"
+                (mouseleave)="hoveredDate = null">
+            {{ date.day }}
+          </span>
+        </ng-template>
+        <br>
+        
+            <div class="badge" style="font:inherit;width: 119.77px;">{{fromDate.day}}.{{fromDate.month}}.{{fromDate.year}}</div>
+            <div class="badge" style="font:inherit;">to</div>
+            <div class="badge " style="font:inherit;width: 119.77px;" *ngIf="toDate===null">-</div>
+            <div class="badge " style="font:inherit;margin:0px;width: 119.77px;" *ngIf="toDate!==null">{{toDate.day}}.{{toDate.month}}.{{toDate.year}}</div>
+        
+    </div>
+    <hr>
 
     <div class="form-floating">
         <textarea class="form-control" id="taskDesc" placeholder="Description" ></textarea>
     </div>
     <a routerLink="/project"><button class="btn btn-primary float-right">Create</button></a>
-
 </div>
