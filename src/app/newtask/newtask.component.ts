@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
-  selector: 'app-newproject',
-  templateUrl: './newproject.component.html',
-  styleUrls: ['./newproject.component.css']
+  selector: 'app-newtask',
+  templateUrl: './newtask.component.html',
+  styleUrls: ['./newtask.component.css'],
 })
-export class NewprojectComponent implements OnInit {
+
+
+export class NewtaskComponent implements OnInit {
 
   constructor() { }
+ 
   teamMembers=[
     {name:"Gökçin Sezgin < gokcin@gmail.com >",value:'1'},
     {name:"Enes Varcan < enes@gmail.com >",value:'2'},
@@ -28,6 +32,7 @@ export class NewprojectComponent implements OnInit {
     this.selectedTeamMembers =this.selectedTeamMembers.filter(o => o.value !== value.toString());
     this.unSelectedTeamMembers.push(this.teamMembers[Object.keys(this.teamMembers).find(key => this.teamMembers[key].value ===  value.toString())]);
   }
+
   ngOnInit(): void {
   }
 

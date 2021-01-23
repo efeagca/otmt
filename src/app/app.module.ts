@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { NewprojectComponent } from './newproject/newproject.component';
 import { FriendlistComponent } from './friendlist/friendlist.component';
+import { NewtaskComponent } from './newtask/newtask.component';
 import { ChatscreenComponent } from './chatscreen/chatscreen.component';
 import { ProjectComponent } from './projects/project/project.component';
 import { MytasksComponent } from './projects/mytasks/mytasks.component';
@@ -20,18 +22,19 @@ import { MytasksComponent } from './projects/mytasks/mytasks.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    FriendlistComponent,
-    ChatscreenComponent,
     ProjectsComponent,
     NewprojectComponent,
     FriendlistComponent,
+    NewtaskComponent,
+    ChatscreenComponent,
     ProjectComponent,
     MytasksComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
