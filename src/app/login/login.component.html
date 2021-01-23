@@ -1,12 +1,12 @@
 <div id="login-container" class="container">
     <div class="container">
         <h3>LOGIN</h3>
-        <input class="form-control" type="text" id="emailInput" placeholder="E-mail">
-        <input class="form-control" type="password" name="" id="passwordInput" placeholder="Password">
+        <input class="form-control" type="text" id="emailInput" placeholder="E-mail" [(ngModel)]="email">
+        <input class="form-control" type="password" name="" id="passwordInput" placeholder="Password" [(ngModel)]="password">
         <a href="#">Forgot Your Password?</a>
 
         <div class="button-group">
-            <a routerLink="/path"><button class="btn btn-lg">Login</button></a>
+            <button class="btn btn-lg" (click)="loginClicked()">Login</button>
             <a routerLink="/register"><button class="btn btn-lg">Register</button></a>
         </div>
     </div>
