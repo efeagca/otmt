@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ChatscreenComponent } from './chatscreen/chatscreen.component';
 import { LoginComponent } from './login/login.component';
+import { NewprojectComponent } from './newproject/newproject.component';
 import { NewtaskComponent } from './newtask/newtask.component';
 import { MytasksComponent } from './projects/mytasks/mytasks.component';
 import { ProjectComponent } from './projects/project/project.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path:'login', component: LoginComponent},
   { path:'register', component: RegisterComponent},
   { path:'chatscreen', component: ChatscreenComponent},
+  {path:'newproject', component: NewprojectComponent},
   { path:'projects', component: ProjectsComponent, children:[
       {path:'project', component:ProjectComponent},
       {path:'mytasks', component:MytasksComponent}
