@@ -34,6 +34,7 @@ export class ProjectService{
   }
 
   createProject(project:Project):void{
+    project.id=this.projectList.length;
     this.projectList.push(project);
   }
 }

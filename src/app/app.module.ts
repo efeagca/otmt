@@ -17,6 +17,8 @@ import { ProjectComponent } from './projects/project/project.component';
 import { MytasksComponent } from './projects/mytasks/mytasks.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatepickerRangeComponent } from './datepicker-range/datepicker-range.component';
+import { ProjectdetailComponent } from './projectdetail/projectdetail.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { DatepickerRangeComponent } from './datepicker-range/datepicker-range.co
     ChatscreenComponent,
     ProjectComponent,
     MytasksComponent,
-    DatepickerRangeComponent
+    DatepickerRangeComponent,
+    ProjectdetailComponent,
+    PagenotfoundComponent
   ],
   imports: [
     

@@ -8,6 +8,6 @@ export const Users:User[]=[
 ]
 
 export const Projects:Project[]=[
-    {name:"Denemeler", description:"Deneme dedik ya", teamMembers:[{name:"Efe", surname:"Ağca", email:"efe@h.com",password:"1234"}], isPublic:true},
-    {name:"Denemeler 2", description:"Deneme dedik ya gökçin", teamMembers:[{name:"Efe", surname:"Ağca", email:"efe@h.com",password:"1234"}], isPublic:true}
+    {id:1, name:"Denemeler", description:"Deneme dedik ya", teamMembers:[{name:"Efe", surname:"Ağca", email:"efe@h.com",password:"1234"}], isPublic:true},
+    {id:2, name:"Denemeler 2", description:"Deneme dedik ya gökçin", teamMembers:[{name:"Efe", surname:"Ağca", email:"efe@h.com",password:"1234"}], isPublic:true}
 ]

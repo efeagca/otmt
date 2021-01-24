@@ -1,0 +1,15 @@
+.sidebar{
+    float: left;
+    width: 200px;
+    height: 100%;
+}
+
+#cont{
+    float: left;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
