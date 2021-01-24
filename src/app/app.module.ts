@@ -19,6 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatepickerRangeComponent } from './datepicker-range/datepicker-range.component';
 import { ProjectdetailComponent } from './projectdetail/projectdetail.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { VideoconferenceComponent } from './videoconference/videoconference.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     MytasksComponent,
     DatepickerRangeComponent,
     ProjectdetailComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    VideoconferenceComponent
   ],
   imports: [
     

@@ -1,0 +1,99 @@
+#cont{
+    max-width: none;
+    float: left;
+    margin-left: 20px;
+    width: 65vw;
+    height:80vh;
+    margin-top: 57px;
+}
+#chatHeader{
+    height: 6vh;
+    padding-top: 14px;
+   
+}
+.headerRight{
+    float:right;
+    font-size:1.5rem;
+    color: black;
+    display:inline;
+    cursor: pointer;
+    margin-left: 25px;
+}
+#messagesContainer{
+    height: 50vh;
+
+}
+#textContainer{
+    height: 14vh;
+    width: 63.5vw;
+}
+.form-floating{
+    float:left;
+    width: 58vw;
+    height: inherit;   
+}
+
+#textContainer>.form-floating>textarea{
+    resize: none;
+    display:block;
+    width: inherit;
+    height: inherit;
+    float:left;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+}
+.sendButton{
+    border: 1px solid #ced4da;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    height: inherit;
+    width: 5vw;
+    display: inline;
+}
+.sendButton:visited{
+    border: 1px solid #ced4da;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.sendButton:focus{
+    border: 1px solid #ced4da;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.sendButton:active{
+    border: 1px solid #ced4da;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+hr {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #8c8c8c inset;
+  }
+.back{
+    float:left;
+    font-size:1.6rem;
+    color: black;
+    display:inline;
+    cursor: pointer;
+    margin-right: 30px;
+  }
+
+.sentMessage{
+    border-radius: 20px;
+    background-color: rgb(157, 207, 157);
+    padding: 20px;
+    font-size: 1rem;
+    float:right;
+
+}
+.receivedMessage{
+    border-radius: 20px;
+    background-color: rgb(157, 207, 157);
+
+    padding: 20px;
+    font-size: 1rem;
+    float:left;
+
+}

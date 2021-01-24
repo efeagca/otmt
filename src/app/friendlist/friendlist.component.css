@@ -1,12 +1,25 @@
-.button-group button{
-    position: absolute;
-    bottom: 5px;
-}
 
+.sidebar{
+  position: relative;
+    float: left;
+    width: 13vw;
+    height: 94vh;
+    background-color: #fff;
+    -moz-box-shadow:    -3px 0 5px 0 #555;
+  -webkit-box-shadow: -3px 0 5px 0 #555;
+  box-shadow:         -3px 0 5px 0 #555;
+}
 .button-group{
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    width: 13vw;
 }
 
-.cont{
-    height: 100%;
+hr{
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8c8c inset;
+}
+.nav-item>a>i{
+    float:right;
 }
