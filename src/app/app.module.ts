@@ -44,7 +44,8 @@ import { VideoconferenceComponent } from './videoconference/videoconference.comp
     BrowserModule,
     FormsModule,
     AppRoutingModule, 
-    CommonModule, NgbModule
+    CommonModule, NgbModule, BrowserAnimationsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
