@@ -47,6 +47,10 @@ export class NewprojectComponent implements OnInit {
     project.isPublic=this.isPublic;
     project.description=this.description;
     project.teamMembers=this.teamMembers;
+    project.taskCount=0
+    project.todoTasks=[];
+    project.doingTasks=[];
+    project.doneTasks=[];
 
     this.projectService.createProject(project);
     this.router.navigateByUrl('/projects/project');

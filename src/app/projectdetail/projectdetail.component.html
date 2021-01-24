@@ -1,30 +1,55 @@
 <div class="clearfix">
-    <div class="sidebar">
-        <app-friendlist></app-friendlist>
+
+  <app-friendlist class="sidebar"></app-friendlist>
+
+
+  <div cdkDropListGroup id="cont" class="clearfix">
+    <div id="toDoContainer">
+      <h4 class="text-muted">To Do</h4>
+      <a routerLink="/nt"><button class="btn btn-primary d-block w-100 mb-2" >New Task</button></a>
+      <div cdkDropList [cdkDropListData]="todo" class="task-list" (cdkDropListDropped)="drop($event)">
+
+        <div id="t.id" class="task" cdkDrag *ngFor="let t of todo">
+          <p>{{t.title}}</p>
+          <label>Priority:</label>
+          <p class="d-inline ml-1">{{t.priority}}</p>
+          <br>
+          <label>Description:</label>
+          <p class="d-inline ml-1">{{t.description}}</p>
+        </div>
+      </div>
     </div>
-    
-    <div id="cont" class="clearfix">
-        <div id="toDoContainer">
-            <h4 class="text-muted">To Do</h4>
-            <div id="toDoList">
 
-            </div>
-        </div>
-        
-        <div id="doingContainer">
-            <h4 class="text-muted">Doing</h4>
-            <div id="doingList">
+    <div id="doingContainer">
+      <h4 class="text-muted">Doing</h4>
+      <div cdkDropList [cdkDropListData]="doing" class="task-list" (cdkDropListDropped)="drop($event)">
 
-            </div>
+        <div id="t.id" class="task" cdkDrag *ngFor="let t of doing">
+          <p>{{t.title}}</p>
+          <label>Priority:</label>
+          <p class="d-inline ml-1">{{t.priority}}</p>
+          <br>
+          <label>Description:</label>
+          <p class="d-inline ml-1">{{t.description}}</p>
         </div>
 
-        <div id="doneContainer">
-            <h4 class="text-muted">Done</h4>
-            <div id="doneList">
-
-            </div>
-        </div>
-
-        
+      </div>
     </div>
+
+    <div id="doneContainer">
+      <h4 class="text-muted">Done</h4>
+      <div class="task-list" cdkDropList [cdkDropListData]="done" class="task-list" (cdkDropListDropped)="drop($event)">
+        <div id="t.id" class="task" cdkDrag *ngFor="let t of done">
+          <p>{{t.title}}</p>
+          <label>Priority:</label>
+          <p class="d-inline ml-1">{{t.priority}}</p>
+          <br>
+          <label>Description:</label>
+          <p class="d-inline ml-1">{{t.description}}</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 </div>

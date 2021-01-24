@@ -19,6 +19,24 @@ export class Project{
     description:string;
     teamMembers:User[];
     isPublic:boolean;
+    taskCount:number;
+    todoTasks:Task[];
+    doingTasks:Task[];
+    doneTasks:Task[];
+
+    constructor(){}
+}
+
+export class Task{
+    id:number;
+    title:string;
+    assignment: any;
+    state:string;
+    projectid:number;
+    priority:number;
+    description:string;
+    fromDate: any;
+    toDate: any;
 
     constructor(){}
 }

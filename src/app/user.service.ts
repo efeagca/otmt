@@ -33,6 +33,12 @@ export class ProjectService{
     return this.projectList;
   }
 
+  getProjectById(id:number):Project{
+    return this.projectList.find((eleman)=>{
+      return eleman.id==id;
+    })
+  }
+
   createProject(project:Project):void{
     project.id=this.projectList.length;
     this.projectList.push(project);
