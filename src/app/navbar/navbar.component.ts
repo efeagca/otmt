@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() {}
-  public email=document.cookie.substring(13);
+  constructor(private router: Router) {}
+  email;
   ngOnInit(): void {
+    
+    this.router.events.subscribe((ev) => {
+      if (ev instanceof NavigationEnd) { 
+        if((this.router.url=="/") || (this.router.url=="/login")){
+          this.email=="";
+        }else{
+          this.email=this.getCookie('email')
+        }
+      }
+    });
+  }
+
+  getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) return match[2];
   }
 
 }

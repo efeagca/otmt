@@ -22,6 +22,7 @@ import { DatepickerRangeComponent } from './datepicker-range/datepicker-range.co
 import { ProjectdetailComponent } from './projectdetail/projectdetail.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { VideoconferenceComponent } from './videoconference/videoconference.component';
+import { MenuComponent } from './projectdetail/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { VideoconferenceComponent } from './videoconference/videoconference.comp
     DatepickerRangeComponent,
     ProjectdetailComponent,
     PagenotfoundComponent,
-    VideoconferenceComponent
+    VideoconferenceComponent,
+    MenuComponent
   ],
   imports: [
     
