@@ -10,18 +10,20 @@ import { MytasksComponent } from './projects/mytasks/mytasks.component';
 import { ProjectComponent } from './projects/project/project.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { RegisterComponent } from './register/register.component';
+import { VideoconferenceComponent } from './videoconference/videoconference.component';
+
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'chatscreen', component: ChatscreenComponent },
-  { path: 'newproject', component: NewprojectComponent },
-  { path: 'nt', component: NewtaskComponent },
-  {
-    path: 'projects', component: ProjectsComponent, children: [
-      { path: 'project', component: ProjectComponent },
-      { path: 'mytasks', component: MytasksComponent },
+  { path:'login', component: LoginComponent},
+  { path:'register', component: RegisterComponent},
+  { path:'chatscreen', component: ChatscreenComponent},
+  { path:'newproject', component: NewprojectComponent},
+  { path:'videoconference', component: VideoconferenceComponent},
+  { path:'newtask', component: NewtaskComponent},
+  { path:'projects', component: ProjectsComponent, children:[
+      {path:'project', component:ProjectComponent},
+      {path:'mytasks', component:MytasksComponent},
     ]
   },
   {

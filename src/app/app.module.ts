@@ -19,8 +19,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DatepickerRangeComponent } from './datepicker-range/datepicker-range.component';
 import { ProjectdetailComponent } from './projectdetail/projectdetail.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DragDropModule } from '@angular/cdk/drag-drop';
+import { VideoconferenceComponent } from './videoconference/videoconference.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +36,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MytasksComponent,
     DatepickerRangeComponent,
     ProjectdetailComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    VideoconferenceComponent
   ],
   imports: [
     

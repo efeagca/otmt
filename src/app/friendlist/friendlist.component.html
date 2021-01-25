@@ -1,21 +1,32 @@
-<div id="cont">
-  <ul class="nav flex-column">
+
+<div class="sidebar bg-light">
+  <div class="container pt-2">
+    <p class="h4 text-center mb-0 pb-0 d-inline-block"><i class="fas fa-user-plus"></i></p>
+    <a  style="width:5px;float:right;font-size:1.35rem;color: black;display:inline;cursor: pointer;"><i class="fas fa-ellipsis-v" ></i></a>
+  </div>
+  <hr>
+  <p *ngIf="status==='Online'" class="h5 text-success d-inline-block mr-2 ml-2"><i class="fas fa-dot-circle"></i></p>
+  <p *ngIf="status==='Offline'" class="h5 text-secondary d-inline-block mr-2 ml-2"><i class="fas fa-dot-circle"></i></p>
+  <p *ngIf="status==='Busy'" class="h5 text-danger d-inline-block mr-2 ml-2"><i class="fas fa-dot-circle"></i></p>
+  <select class="form-select d-inline-block" style="width: 10vw;" (change)="onChangeStatusSelect($event.target.value)" aria-label="Default select example">
+    <option value="Online">Online</option>
+    <option value="Offline">Offline</option>
+    <option value="Busy">Busy</option>
+  </select>
+  <hr>
+  <ul class="nav flex-column ">
     <li class="nav-item">
-      <a class="nav-link active text-success bg-light" aria-current="page" href="#">GS <i
-          class="fas fa-dot-circle"></i></a>
+      <a class="nav-link active text-success bg-light" routerLink="/chatscreen">Enes Varcan <i class="fas fa-dot-circle"></i></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active text-success bg-light" href="#">EV <i class="fas fa-dot-circle"></i></a>
+      <a class="nav-link active text-success bg-light" href="#">Gökçin Sezgin <i class="fas fa-dot-circle"></i></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active text-success bg-light" href="#">EA <i class="fas fa-dot-circle"></i></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-secondary bg-light" href="#">MB <i class="fas fa-dot-circle"></i></a>
+      <a class="nav-link text-secondary bg-light" href="#">Mustafa Can Bayar <i class="fas fa-dot-circle"></i></a>
     </li>
   </ul>
 
   <div class="button-group">
-    <a routerLink="/login"><button class="btn btn-danger d-block w-100">Logout</button></a>
+    <a routerLink="/login"><button class="btn btn-danger d-block w-100" >Logout</button></a>
   </div>
 </div>

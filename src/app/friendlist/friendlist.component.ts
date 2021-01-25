@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class FriendlistComponent implements OnInit {
 
   constructor() { }
+  public status="Online";
+
+  public onChangeStatusSelect(value):void{
+    this.status=value;
+  }
 
   ngOnInit(): void {
   }

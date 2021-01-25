@@ -1,1 +1,28 @@
-<p>chatscreen works!</p>
+<app-friendlist></app-friendlist>
+
+<div class="container bg-light" id="cont">
+    <div  id="chatHeader">
+        <a class="back" routerLink="/projects/project"><i class="fas fa-arrow-circle-left"></i></a>
+        <p  class="h4 text-success d-inline-block p-1" style="margin:auto;"><i class="fas fa-dot-circle"></i> Enes Varcan</p>
+        <a class="headerRight"><i class="fas fa-ellipsis-v" ></i></a>
+        <a class="headerRight"><i class="fas fa-phone"></i></a>
+        <a class="headerRight"  routerLink="/videoconference"><i class="fas fa-video"></i></a>
+        <a class="headerRight"><i class="fas fa-paperclip"></i></a>
+
+    </div>
+    <hr>
+    <div class="container" id="messagesContainer">
+        <div class="receivedMessage">Hello !</div>
+        <br><br>
+        <div class="sentMessage">Hello Enes Varcan !</div>
+
+    </div>
+    <hr>
+    <div id="textContainer">
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Text"></textarea>
+        </div>
+        <button class="sendButton">SEND</button>
+
+    </div>
+</div>

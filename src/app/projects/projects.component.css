@@ -4,12 +4,15 @@ a{
 
 .sidebar{
     float: left;
-    width: 200px;
-    height: 100%;
+    width: 13vw;
+    height: 100vh;
 }
 
 #cont{
     float: left;
+    margin-left: 20px;
+    width: 84vw;
+    margin-top:57px;
 }
 
 .clearfix::after {
@@ -17,7 +20,6 @@ a{
     clear: both;
     display: block;
 }
-
 
 
 
