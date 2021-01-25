@@ -1,31 +1,59 @@
 #cont {
     background: #71AFFF;
-    padding: 100px;
+    padding: 20px;
     max-width: none;
     float: left;
     margin-left: 20px;
     width: 65vw;
     height:80vh;
     margin-top: 57px;
-  }
+    -moz-box-shadow:    -3px 0 5px 0 #555;
+    -webkit-box-shadow: -3px 0 5px 0 #555;
+    box-shadow:         -3px 0 5px 0 #555;
+}
+#call-header{
+    background: gray;
+    height: 40px;
+    display: inline-block;
+    padding: 0;
+    border-radius:20px;
+    padding-right: 10px;
+}
+.call-animation-header{
+    background: #fff;
+    height: 40px;
+    border-radius: 100%;
+    border: solid 0px #fff;
+    animation: play 2s ease infinite;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    padding: 0;
+    
+    
+}
   .call-animation {
       background: #fff;
-      width: 135px;
-      height: 135px;
+      width: 160px;
+      height: 160px;
       position: relative;
       margin: 0 auto;
       border-radius: 100%;
-      border: solid 5px #fff;
+      border: solid 0px #fff;
       animation: play 2s ease infinite;
       -webkit-backface-visibility: hidden;
       -moz-backface-visibility: hidden;
       -ms-backface-visibility: hidden;
       backface-visibility: hidden;
-    
+      padding: 0;
+      margin-top: 20vh;
+    margin-bottom: 14vw;
   }
-   img {
-          width: 135px;
-          height: 135px;
+   .call-animation>img {
+        background-color: #71AFFF;
+          width: inherit;
+          height: inherit;
           border-radius: 100%;
           position: absolute;
           left: 0px;
@@ -48,3 +76,46 @@
   
   }
   
+.call-menu{
+    background: gray;
+    height: 60px;
+    margin:0 auto;
+    border-radius: 20px;
+    padding-right: 10px;
+    margin: 0 auto;
+    display: inline-block;
+    padding:10px;
+    padding-right: 25px;
+    display: table;
+
+}
+
+.call-menu>a{
+    float:left;
+    font-size:1.5rem;
+    color: white;
+    display:inline;
+    cursor: pointer;
+    margin-left: 25px;
+}
+
+#closeWindow{
+    float:right;
+    font-size:2.3rem;
+    color: rgb(155, 4, 4);
+    display:inline;
+    cursor: pointer;
+    height: 40px;
+    padding:0;
+}
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 175px;
+    padding: 0 5px;
+}
+.volume-slider{
+
+}

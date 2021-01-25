@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
-
+  constructor() {}
+  public email=document.cookie.substring(13);
   ngOnInit(): void {
   }
 
