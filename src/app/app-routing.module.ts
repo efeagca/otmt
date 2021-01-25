@@ -13,19 +13,23 @@ import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path:'login', component: LoginComponent},
-  { path:'register', component: RegisterComponent},
-  { path:'chatscreen', component: ChatscreenComponent},
-  { path:'newproject', component: NewprojectComponent},
-  { path:'nt', component: NewtaskComponent},
-  { path:'projects', component: ProjectsComponent, children:[
-      {path:'project', component:ProjectComponent},
-      {path:'mytasks', component:MytasksComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'chatscreen', component: ChatscreenComponent },
+  { path: 'newproject', component: NewprojectComponent },
+  { path: 'nt', component: NewtaskComponent },
+  {
+    path: 'projects', component: ProjectsComponent, children: [
+      { path: 'project', component: ProjectComponent },
+      { path: 'mytasks', component: MytasksComponent },
     ]
   },
-  {path:'project', component:ProjectdetailComponent, children:[
-    {path:":id", component:ProjectdetailComponent}
-  ]},
+  {
+    path: 'project', component: ProjectdetailComponent, children: [
+      { path: ":id", component: ProjectdetailComponent },
+    ]
+  },
+  { path: "project/:id/newtask", component: NewtaskComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 

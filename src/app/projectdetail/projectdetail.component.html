@@ -6,15 +6,15 @@
   <div cdkDropListGroup id="cont" class="clearfix">
     <div id="toDoContainer">
       <h4 class="text-muted">To Do</h4>
-      <a routerLink="/nt"><button class="btn btn-primary d-block w-100 mb-2" >New Task</button></a>
+      <a [routerLink]="[projectid,'newtask']" query><button class="btn btn-primary d-block w-100 mb-2" >New Task</button></a>
       <div cdkDropList [cdkDropListData]="todo" class="task-list" (cdkDropListDropped)="drop($event)">
 
         <div id="t.id" class="task" cdkDrag *ngFor="let t of todo">
-          <p>{{t.title}}</p>
-          <label>Priority:</label>
+          <h4>{{t.title}}</h4>
+          <label><b>Priority:</b></label>
           <p class="d-inline ml-1">{{t.priority}}</p>
           <br>
-          <label>Description:</label>
+          <label><b>Description:</b></label>
           <p class="d-inline ml-1">{{t.description}}</p>
         </div>
       </div>
@@ -25,11 +25,11 @@
       <div cdkDropList [cdkDropListData]="doing" class="task-list" (cdkDropListDropped)="drop($event)">
 
         <div id="t.id" class="task" cdkDrag *ngFor="let t of doing">
-          <p>{{t.title}}</p>
-          <label>Priority:</label>
+          <h4>{{t.title}}</h4>
+          <label><b>Priority:</b></label>
           <p class="d-inline ml-1">{{t.priority}}</p>
           <br>
-          <label>Description:</label>
+          <label><b>Description:</b></label>
           <p class="d-inline ml-1">{{t.description}}</p>
         </div>
 
@@ -40,11 +40,11 @@
       <h4 class="text-muted">Done</h4>
       <div class="task-list" cdkDropList [cdkDropListData]="done" class="task-list" (cdkDropListDropped)="drop($event)">
         <div id="t.id" class="task" cdkDrag *ngFor="let t of done">
-          <p>{{t.title}}</p>
-          <label>Priority:</label>
+          <h5>{{t.title}}</h5>
+          <label><b>Priority:</b></label>
           <p class="d-inline ml-1">{{t.priority}}</p>
           <br>
-          <label>Description:</label>
+          <label><b>Description:</b></label>
           <p class="d-inline ml-1">{{t.description}}</p>
         </div>
       </div>

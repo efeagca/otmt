@@ -1,7 +1,7 @@
 <div id="newtask-container" class="container">
     <h3 class="d-inline-block">New Task</h3>
     <hr>
-    <input class="form-control" type="text" id="taskTitleInput" placeholder="Task Title">
+    <input class="form-control" type="text" id="taskTitleInput" placeholder="Task Title" [(ngModel)]="title">
     <div id="assignSelect" class="container">
         <i class="fas fa-user " id="assignIcon"></i>
         <select (change)="onChangeAssignSelect($event)" class="form-select fa" >
@@ -38,25 +38,25 @@
 
     <div style="margin-bottom: 3px;">
         <label for="taskStateInput d-inline-block" style="margin-right: 20px;">State</label>
-        <select class="form-select d-inline-block" id="stateSelect" aria-label="Default select example">
-            <option selected>To Do</option>
-            <option value="1">To Do</option>
+        <select [(ngModel)]="state" class="form-select d-inline-block" id="stateSelect" aria-label="Default select example">
+            <option selected value="To Do">To Do</option>
+            <option value="Doing">Doing</option>
+            <option value="Done">Done</option>
         </select>
         <div class="verticalLine" > </div>
         <label style="margin-right: 20px;">Project</label>
-        <label >Project 1</label>
+        <label>Project 1</label>
         <div class="verticalLine" > </div>
         <label for="taskStateInput d-inline-block" style="margin-right: 20px;">Priority</label>
-        <select class="form-select d-inline-block" id="priorSelect" aria-label="Default select example">
-            <option selected>1</option>
-            <option value="1">1</option>
-            <option value="1">2</option>
-            <option value="1">3</option>
-            <option value="1">4</option>
+        <select [(ngModel)]="priority" class="form-select d-inline-block" id="priorSelect" aria-label="Default select example">
+            <option selected value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
         </select>
     </div>
     <hr>
-    <div class="container mb-3 text-center"  >
+    <div class="container mb-3 text-center">
         <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden">
         </ngb-datepicker>
         <ng-template #t let-date let-focused="focused">
@@ -80,7 +80,7 @@
     <hr>
 
     <div class="form-floating">
-        <textarea class="form-control" id="taskDesc" placeholder="Description" ></textarea>
+        <textarea class="form-control" id="taskDesc" placeholder="Description" [(ngModel)]="description"></textarea>
     </div>
-    <a routerLink="/project"><button class="btn btn-primary float-right">Create</button></a>
+    <button class="btn btn-primary float-right" (click)="createTask()">Create</button>
 </div>

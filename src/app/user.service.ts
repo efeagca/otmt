@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Project, User } from './user';
+import { Project, Task, User } from './user';
 import { Projects, Users } from './user-datasource';
 
 @Injectable({
@@ -42,6 +42,24 @@ export class ProjectService{
   createProject(project:Project):void{
     project.id=this.projectList.length;
     this.projectList.push(project);
+  }
+
+  createTask(task:Task):void{
+    let project = this.getProjectById(task.projectid);
+    project.taskCount++;
+    task.id=project.taskCount;
+
+    switch(task.state){
+      case "To Do":
+        project.todoTasks.push(task);
+        break;
+      case "Doing":
+        project.doingTasks.push(task);
+        break;
+      case "Done":
+        project.doneTasks.push(task);
+        break;
+    }
   }
 }
 

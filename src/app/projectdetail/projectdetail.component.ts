@@ -17,15 +17,15 @@ export class ProjectdetailComponent implements OnInit {
   todo=[];
   doing=[];
   done=[];
+  projectid;
 
   ngOnInit(): void {
 
     this.route.queryParams.subscribe(params => {
-      let id= +params.id;
-      console.log(id)
-      this.project = this.projectService.getProjectById(id);
+      this.projectid= +params.id;
+      console.log(this.projectid)
+      this.project = this.projectService.getProjectById(this.projectid);
     });
-
       this.todo=this.project.todoTasks;
       this.doing=this.project.doingTasks;
       this.done=this.project.doneTasks;

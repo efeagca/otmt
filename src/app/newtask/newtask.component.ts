@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import {NgbDate, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
+import { Task } from '../user';
+import { ProjectService } from '../user.service';
 
 @Component({
   selector: 'app-newtask',
@@ -10,8 +13,15 @@ import {NgbDate, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 
 export class NewtaskComponent implements OnInit {
 
-  constructor(calendar: NgbCalendar) { 
+  constructor(calendar: NgbCalendar, private route:ActivatedRoute, private projectService:ProjectService, private router:Router) { 
       this.fromDate = calendar.getToday();
+  }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      let id= +params.get('id');
+      this.projectid = id;
+    });
   }
  
   teamMembers=[
@@ -24,6 +34,12 @@ export class NewtaskComponent implements OnInit {
   public removeFromAssignned:string;
   public unassigned="Unassigned";
   public assigned="--";
+
+  title;
+  state;
+  priority;
+  description;
+  projectid;
   
   public onChangeAssignSelect(event):void{
 
@@ -63,7 +79,22 @@ export class NewtaskComponent implements OnInit {
     return date.equals(this.fromDate) || (this.toDate && date.equals(this.toDate)) || this.isInside(date) || this.isHovered(date);
   }
 
-  ngOnInit(): void {
+ 
+
+  createTask():void{
+    let task = new Task();
+    task.assignment=this.selectedTeamMembers;
+    task.toDate=`${this.toDate.day}/${this.toDate.month}/${this.toDate.year}`;
+    task.fromDate=`${this.fromDate.day}/${this.fromDate.month}/${this.fromDate.year}`;
+    task.projectid=this.projectid
+    task.priority=this.priority;
+    task.title=this.title;
+    task.description=this.description;
+    task.state=this.state;
+    console.log(task)
+
+    this.projectService.createTask(task);
+    this.router.navigate(['project'],{queryParams:{id:this.projectid}});
   }
 
 }
