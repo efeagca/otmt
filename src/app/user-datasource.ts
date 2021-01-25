@@ -5,6 +5,7 @@ export const Users:User[]=[
     {name:"Gökçin", surname:"Sezgin", email:"gogo@h.com",password:"1234"},
     {name:"Efe", surname:"Ağca", email:"efe@h.com",password:"1234"},
     {name:"Mustafa Can", surname:"Bayar", email:"mustafa@h.com",password:"1234"},
+    {name:"Example", surname:"Example", email:"example@example.com",password:"1234"}
 ]
 
 export const Projects:Project[]=[

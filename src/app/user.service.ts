@@ -40,7 +40,7 @@ export class ProjectService{
   }
 
   createProject(project:Project):void{
-    project.id=this.projectList.length;
+    project.id=this.projectList.length+1;
     this.projectList.push(project);
   }
 
