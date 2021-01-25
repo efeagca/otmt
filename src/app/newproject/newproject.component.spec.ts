@@ -22,4 +22,17 @@ describe('NewprojectComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create a project', () => {
+    let testdata=[
+          {projectName:"testprojectname"},
+          {projectName:""}
+        ];
+    testdata.forEach(e =>{
+          fixture.componentInstance.projectName=e.projectName;
+          fixture.componentInstance.create();
+          expect(fixture.componentInstance.projectName).not.toEqual("");
+      });
+  });
+
 });

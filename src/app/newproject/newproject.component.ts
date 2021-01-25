@@ -14,11 +14,6 @@ export class NewprojectComponent implements OnInit {
 
   teamMembers=this.userService.userList;
   
-//   [
-//     {name:"Gökçin Sezgin < gokcin@gmail.com >",value:'1'},
-//     {name:"Enes Varcan < enes@gmail.com >",value:'2'},
-//     {name:"Mustafa Can Bayar < mbc@gmail.com >",value:'3'},
-// ]
   public selectedTeamMembers=[];
   public unSelectedTeamMembers=this.teamMembers;
   public removeFromAssignned:string;

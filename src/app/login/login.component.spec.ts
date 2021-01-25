@@ -22,4 +22,24 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should login', () => {
+    let testdata=[
+      {email:"gsezgin@gmail.com",password:"gsezgin"},
+      {email:"testemail",password:"12345"},
+      {email:"g@gmail.com",password:""},
+      {email:"",password:"gsezgin"}
+    ];
+    testdata.forEach(e =>{
+      fixture.componentInstance.email=e.email;
+      fixture.componentInstance.password=e.password;
+      fixture.componentInstance.loginClicked();
+      expect(fixture.componentInstance.email).toContain('@');
+      expect(fixture.componentInstance.email).not.toEqual("");
+      expect(fixture.componentInstance.password).not.toEqual("");
+      expect(fixture.componentInstance.password.length).toBeGreaterThan(4);
+    });
+  });
+
+
+
 });

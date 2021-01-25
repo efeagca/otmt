@@ -8,9 +8,9 @@ describe('NewtaskComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewtaskComponent ]
+      declarations: [NewtaskComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -22,4 +22,16 @@ describe('NewtaskComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should create a task', () => {
+    let testdata = [
+      { taskName: "testtaskname" },
+      { taskName: "" }
+    ];
+    testdata.forEach(e => {
+      fixture.componentInstance.title = e.taskName;
+      fixture.componentInstance.createTask();
+      expect(fixture.componentInstance.title).not.toEqual("");
+    });
+  });
+
 });
