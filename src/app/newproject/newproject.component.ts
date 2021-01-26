@@ -18,9 +18,9 @@ export class NewprojectComponent implements OnInit {
   public unSelectedTeamMembers=this.teamMembers;
   public removeFromAssignned:string;
 
-  projectName:string;
+  projectName:string ="";
   isPublic:boolean;
-  description:string;
+  description:string="";
 
   public onChangeAssignSelect(event):void{
 
@@ -37,6 +37,10 @@ export class NewprojectComponent implements OnInit {
   }
 
   create():void{
+    if(this.projectName===""){
+      window.alert("Project name can not be empty.")
+      return;
+    }
     let project = new Project();
     project.name=this.projectName;
     project.isPublic=this.isPublic;

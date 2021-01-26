@@ -17,10 +17,18 @@ export class LoginComponent implements OnInit {
   }
 
   loginClicked():void{
-    
+    if(this.email.length===0){
+      window.alert("Email can not be empty");
+    }
+    if(this.password.length===0){
+      window.alert("Password can not be empty");
+    }
+  
     if(this.userService.checkForLogin(this.email,this.password)){
       document.cookie = `email = ${this.email}`;
       this.router.navigateByUrl('/projects/project');
+    }else{
+      window.alert("Email or Password is invalid. Please try again.");
     }
   }
 }

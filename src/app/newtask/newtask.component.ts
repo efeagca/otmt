@@ -35,11 +35,11 @@ export class NewtaskComponent implements OnInit {
   public unassigned="Unassigned";
   public assigned="--";
 
-  title;
-  state;
-  priority;
-  description;
-  projectid;
+  public title="";
+  public state="To Do";
+  public priority=1;
+  public description;
+  public projectid;
   
   public onChangeAssignSelect(event):void{
 
@@ -82,6 +82,15 @@ export class NewtaskComponent implements OnInit {
  
 
   createTask():void{
+    if(this.title===""){
+      window.alert("Task title can not be empty.");
+      return;
+    }
+    if(this.toDate===null){
+      window.alert("You must determine the deadline.");
+      return;
+    }
+
     let task = new Task();
     task.assignment=this.selectedTeamMembers;
     task.toDate=`${this.toDate.day}/${this.toDate.month}/${this.toDate.year}`;
@@ -91,7 +100,7 @@ export class NewtaskComponent implements OnInit {
     task.title=this.title;
     task.description=this.description;
     task.state=this.state;
-    console.log(task)
+    console.log(task);
 
     this.projectService.createTask(task);
     this.router.navigate(['project'],{queryParams:{id:this.projectid}});
