@@ -10,11 +10,11 @@ import { UserService } from '../user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  name:string;
-  surname:string;
-  password:string;
-  email:string;
-  passwordCheck:string;
+  name:string="";
+  surname:string="";
+  password:string="";
+  email:string="";
+  passwordCheck:string="";
 
   constructor(private userService:UserService,private router:Router) { }
 
@@ -22,12 +22,39 @@ export class RegisterComponent implements OnInit {
   }
 
   register():void{
-
-    if(this.password == this.passwordCheck){
-      let user = new User(this.name,this.surname,this.email,this.password);    
-      this.userService.registerUser(user);
-      this.router.navigateByUrl('/');
+   
+    if(this.email===""){
+      window.alert("Email can not be empty.");
+      return;
     }
+    if(this.name===""){
+      window.alert("Name can not be empty.");
+      return;
+    }
+   
+    if(this.password.length<4){
+      window.alert("Password must have minimum 4 characters");
+      return;
+    }
+    if(this.passwordCheck===""){
+      window.alert("Password Check can not be empty.");
+      return;
+    }
+
+    if(!this.email.includes("@")){
+      window.alert("Email is invalid. Please write a valid email.");
+      return;
+    }
+    
+    if(this.password !== this.passwordCheck){
+      window.alert("Password is not equal to Password Check");
+      return;
+    }
+  
+    let user = new User(this.name,this.surname,this.email,this.password);    
+    this.userService.registerUser(user);
+    this.router.navigateByUrl('/');
+    
   }
 
 }
