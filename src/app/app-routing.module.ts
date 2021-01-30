@@ -34,7 +34,6 @@ const routes: Routes = [
     ]
   },
   { path:'project/:id/manage', component: ManageprojectComponent},
-  ,
   { path:'project/:id/docs', component: DocsComponent},
   { path: "project/:id/newtask", component: NewtaskComponent },
   { path: '**', component: PagenotfoundComponent }

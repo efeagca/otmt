@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-docs',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocsComponent implements OnInit {
 
-  constructor() { }
+  public projectid;
+  constructor(private route:ActivatedRoute) { 
 
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      let id= +params.get('id');
+      this.projectid = id;
+    });
+  }
 }

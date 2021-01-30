@@ -28,3 +28,20 @@ input{
 .button-group{
     margin-top: 20px;
 }
+.logo{
+    position: absolute;
+    animation: slide4 3s linear  infinite;
+    opacity: 10%;
+    width: 100px;
+    height: 100px;
+}
+@keyframes slide4 {
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+    
+  }

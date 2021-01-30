@@ -12,6 +12,20 @@ import { ProjectService } from '../user.service';
 
 
 export class NewtaskComponent implements OnInit {
+  email: any;
+  projectName: string;
+  teamMembers=[]
+  public selectedTeamMembers=[];
+  public unSelectedTeamMembers=[];
+  public removeFromAssignned:string;
+  public unassigned="Unassigned";
+  public assigned="--";
+
+  public title="";
+  public state="To Do";
+  public priority=1;
+  public description;
+  public projectid;
 
   constructor(calendar: NgbCalendar, private route:ActivatedRoute, private projectService:ProjectService, private router:Router) { 
       this.fromDate = calendar.getToday();
@@ -22,36 +36,31 @@ export class NewtaskComponent implements OnInit {
       let id= +params.get('id');
       this.projectid = id;
     });
+    this.email=this.getCookie("email");
+
+    let project = this.projectService.getProjectById(this.projectid);
+    this.projectName=project.name;
+    this.description=project.description;
+    this.teamMembers=project.teamMembers;
+    this.unSelectedTeamMembers=project.teamMembers;
+
+    
+    this.unSelectedTeamMembers =this.unSelectedTeamMembers.filter(o => o.email !== this.email);
+
   }
  
-  teamMembers=[
-    {name:"Gökçin Sezgin < gokcin@gmail.com >",value:'1'},
-    {name:"Enes Varcan < enes@gmail.com >",value:'2'},
-    {name:"Mustafa Can Bayar < mbc@gmail.com >",value:'3'},
-]
-  public selectedTeamMembers=[];
-  public unSelectedTeamMembers=this.teamMembers;
-  public removeFromAssignned:string;
-  public unassigned="Unassigned";
-  public assigned="--";
 
-  public title="";
-  public state="To Do";
-  public priority=1;
-  public description;
-  public projectid;
   
   public onChangeAssignSelect(event):void{
-
-    this.selectedTeamMembers.push(this.teamMembers[Object.keys(this.teamMembers).find(key => this.teamMembers[key].value ===  event.target.value.toString())]);
+    this.selectedTeamMembers.push(this.teamMembers[Object.keys(this.teamMembers).find(key => this.teamMembers[key].email ===  event.target.value)]);
     
-    this.unSelectedTeamMembers =this.unSelectedTeamMembers.filter(o => o.value !== event.target.value.toString());
+    this.unSelectedTeamMembers =this.unSelectedTeamMembers.filter(o => o.email !== event.target.value);
   }
 
-  public removeAssignedButton(value){
-    this.selectedTeamMembers =this.selectedTeamMembers.filter(o => o.value !== value.toString());
-    this.unSelectedTeamMembers.push(this.teamMembers[Object.keys(this.teamMembers).find(key => this.teamMembers[key].value ===  value.toString())]);
-  }
+  public removeAssignedButton(email){
+    this.selectedTeamMembers =this.selectedTeamMembers.filter(o => o.email !== email);
+    this.unSelectedTeamMembers.push(this.teamMembers[Object.keys(this.teamMembers).find(key => this.teamMembers[key].email ===  email)]);
+   }
 
   hoveredDate: NgbDate | null = null;
 
@@ -105,5 +114,8 @@ export class NewtaskComponent implements OnInit {
     this.projectService.createTask(task);
     this.router.navigate(['project'],{queryParams:{id:this.projectid}});
   }
-
+  getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) return match[2];
+  }
 }

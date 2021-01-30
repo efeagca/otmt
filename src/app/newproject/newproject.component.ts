@@ -9,13 +9,14 @@ import { ProjectService, UserService } from '../user.service';
   styleUrls: ['./newproject.component.css']
 })
 export class NewprojectComponent implements OnInit {
+  email: string;
 
   constructor(private projectService:ProjectService,private userService:UserService, private router:Router) { }
 
   teamMembers=this.userService.userList;
   
   public selectedTeamMembers=[];
-  public unSelectedTeamMembers=this.teamMembers;
+  public unSelectedTeamMembers=[];
   public removeFromAssignned:string;
 
   projectName:string ="";
@@ -34,8 +35,14 @@ export class NewprojectComponent implements OnInit {
     this.unSelectedTeamMembers.push(this.teamMembers[Object.keys(this.teamMembers).find(key => this.teamMembers[key].email ===  email)]);
   }
   ngOnInit(): void {
+    this.email=this.getCookie('email');
+    this.teamMembers =this.teamMembers.filter(o => o.email !== this.email);
+    this.unSelectedTeamMembers=this.teamMembers;
   }
-
+  getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) return match[2];
+  }
   create():void{
     if(this.projectName===""){
       window.alert("Project name can not be empty.")
@@ -45,7 +52,7 @@ export class NewprojectComponent implements OnInit {
     project.name=this.projectName;
     project.isPublic=this.isPublic;
     project.description=this.description;
-    project.teamMembers=this.teamMembers;
+    project.teamMembers=this.selectedTeamMembers;
     project.taskCount=0
     project.todoTasks=[];
     project.doingTasks=[];

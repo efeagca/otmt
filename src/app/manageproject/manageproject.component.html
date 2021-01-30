@@ -1,1 +1,51 @@
-<p>manageproject works!</p>
+<app-friendlist></app-friendlist>
+<div id="newproject-container" class="container">
+    <h3 class="d-inline-block">Update Project</h3>
+    <hr>
+
+    <input class="form-control mb-3" type="text" id="projectNameInput" placeholder="Project Name" [(ngModel)]="projectName">
+
+    
+    <div id="assignSelect" class="container">
+      <i class="fas fa-user " id="assignIcon"></i>
+      <p style="display:inline;">Team Members</p>
+      <select (change)="onChangeAssignSelect($event)" class="form-select fa" >
+          <option selected>--</option>
+          <option [value]="m.email" *ngFor="let m of unSelectedTeamMembers">
+           
+             {{m.name}} {{m.surname}} &lt;{{m.email}}&gt; 
+           </option>
+        
+          <i class="fas fa-user"></i>
+      </select>
+  </div>
+  <div id="assignedDisplayer" class="container">
+      <div class="assignGroup" *ngFor="let tm of selectedTeamMembers">
+        <div class="verticalLine" > </div>
+        {{tm.name}} {{tm.surname}} &lt;{{tm.email}}&gt;
+          <button  (click)="removeAssignedButton(tm.email)" class="assignRemBtn"><i class="fas fa-user-minus"></i></button>
+      </div>
+
+  </div>
+  <hr style="margin-bottom: 0px;">
+  <div class="form-check d-inline-block mr-5" >
+    <input class="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault1" [(ngModel)]="isPublic">
+    <label class="form-check-label " for="flexRadioDefault1">
+        <i class="fas fa-globe"></i> Public
+    </label>
+  </div>
+  <div class="form-check d-inline-block">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+    <label class="form-check-label" for="flexRadioDefault2 ">
+        <i class="fas fa-lock"></i> Private
+    </label>
+  </div>
+
+    <div class="form-floating mb-3">
+        <textarea class="form-control" placeholder="Description" id="floatingTextarea2" style="height: 100px; resize: none;" [(ngModel)]="description"></textarea>
+    </div>
+    
+      <button class="btn btn-primary float-right" (click)="update()">Update</button>
+      <button class="btn btn-danger float-right mr-2" routerLink="/project" [queryParams]="{id:projectid}" >Cancel</button>
+
+</div>

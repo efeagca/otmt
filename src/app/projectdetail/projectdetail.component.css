@@ -6,7 +6,7 @@
 
 #cont {
   float: left;
-  margin-top: 10px;
+  margin-top: 57px;
 }
 
 .clearfix::after {
@@ -49,6 +49,9 @@
   background: #01164641;
   font-size: 14px;
   padding: 5px;
+  border-radius: 10px;
+  padding:5px;
+  margin-bottom: 10px;
 }
 
 .task label{

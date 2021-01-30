@@ -51,20 +51,10 @@
     width: 5vw;
     display: inline;
 }
-.sendButton:visited{
-    border: 1px solid #ced4da;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
-.sendButton:focus{
-    border: 1px solid #ced4da;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
+
+
 .sendButton:active{
-    border: 1px solid #ced4da;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
+    border:none;
 }
 hr {
     height: 10px;

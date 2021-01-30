@@ -1,1 +1,42 @@
-<p>docs works!</p>
+<app-friendlist></app-friendlist>
+<div class="container bg-light" id="cont">
+    <div class=" docs-header ">
+        <a class="back d-inline-block mr-2" routerLink="/project" [queryParams]="{id:projectid}" ><i class="fas fa-arrow-circle-left"></i></a>
+        <p class="d-inline-block">Documents</p>
+        <i class="fas fa-plus" style="float:right;font-size: 1rem;"></i>
+    </div>
+    <hr style="margin-top: 0px;">
+    <div id="docs-container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th>Document Name</th>
+                  <th>From</th>
+                  <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                   <td> <a href="" class="doc-link">example1-document.txt</a></td>
+                    <td>Gökçin Sezgin</td>
+                    <td>01.01.2021</td>
+                </tr>
+                <tr>
+                    <td><a href="" class="doc-link">example2-document.txt</a></td>
+                    <td>Mustafa Bayar</td>
+                    <td>01.01.2021</td>
+                </tr>
+                <tr>
+                    <td><a href="" class="doc-link">example3-document.txt</a></td>
+                    <td>Mustafa Bayar</td>
+                    <td>01.01.2021</td>
+                </tr>
+            </tbody>
+    
+        </table>
+    </div>
+    <div class="docs-body" >
+        <i class="fa fa-long-arrow-down arrow1" aria-hidden="true" style="font-size: 3rem;"></i>
+            <b><p >Drag Here</p></b>
+    </div>
+</div>  

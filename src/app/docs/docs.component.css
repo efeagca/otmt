@@ -1,0 +1,50 @@
+#cont{
+    max-width: none;
+    float: left;
+    margin-left: 20px;
+    width: 65vw;
+    height:80vh;
+    margin-top: 57px;
+}
+.back{
+    font-size: 1rem;
+}
+.docs-header{
+    padding-top: 10px;
+    margin-left:5px;
+    padding-left: 0px;
+    margin-right: 5px;
+}
+.docs-body{
+    width: 63vw;
+    height:20vh;
+    text-align: center;
+    margin-top: 29vh;
+    border-style: dashed;
+}
+.docs-body>b>p{
+margin-top: 3vh;
+
+}
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: rgba(1, 22, 70, 0.322);
+ }
+
+ .table-striped > tbody > tr:nth-child(2n) > td, .table-striped > tbody > tr:nth-child(2n) > th, .table-striped > thead > tr > th {
+    background-color: rgba(1, 22, 70, 0.171);
+ }
+ @keyframes slide1 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(0, 20px);
+    }
+  }
+  .arrow1 {
+    animation: slide1 1s ease-in-out infinite;
+    margin-left: 9px;
+    margin-top:10px;
+  }

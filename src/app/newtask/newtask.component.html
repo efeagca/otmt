@@ -7,9 +7,8 @@
         <select (change)="onChangeAssignSelect($event)" class="form-select fa" >
             <option  *ngIf="selectedTeamMembers.length===0" selected >{{unassigned}}</option>
             <option  *ngIf="selectedTeamMembers.length!==0" selected >{{assigned}}</option>
-
-            <option [value]="m.value" *ngFor="let m of unSelectedTeamMembers">
-                 {{m.name}}
+            <option [value]="m.email" *ngFor="let m of unSelectedTeamMembers">
+                 {{m.name}} {{m.surname}} &lt;{{m.email}}&gt; 
              </option>
           
             <i class="fas fa-user"></i>
@@ -17,8 +16,8 @@
     </div>
     <div id="assignedDisplayer" class="container">
         <div class="assignGroup" *ngFor="let tm of selectedTeamMembers">
-            <button  (click)="removeAssignedButton(tm.value)" class="btn btn-outline-info assignRemBtn"><i class="fas fa-user-minus"></i></button>
-            {{tm.name}}
+            <button  (click)="removeAssignedButton(tm.email)" class="btn btn-outline-info assignRemBtn"><i class="fas fa-user-minus"></i></button>
+            {{tm.name}} {{tm.surname}} &lt;{{tm.email}}&gt;
             <div id="effortSelect">
                 <p style="display:inline;margin-right: 5px;">Effort</p>
                 <select  class="form-select" >
@@ -45,7 +44,7 @@
         </select>
         <div class="verticalLine" > </div>
         <label style="margin-right: 20px;">Project</label>
-        <label>Project 1</label>
+        <label> 1</label>
         <div class="verticalLine" > </div>
         <label for="taskStateInput d-inline-block" style="margin-right: 20px;">Priority</label>
         <select [(ngModel)]="priority" class="form-select d-inline-block" id="priorSelect" aria-label="Default select example">
@@ -83,4 +82,6 @@
         <textarea class="form-control" id="taskDesc" placeholder="Description" [(ngModel)]="description"></textarea>
     </div>
     <button class="btn btn-primary float-right" (click)="createTask()">Create</button>
+
+    <button class="btn btn-danger float-right mr-2" routerLink="/project" [queryParams]="{ id: projectid }">Cancel</button>
 </div>

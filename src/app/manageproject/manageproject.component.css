@@ -1,0 +1,79 @@
+#newproject-container{
+    width: 700px;
+    height: 400px;
+    margin-left: -300px;
+    margin-top: -200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    border-radius: 5%;   
+    font-size: 1.35rem;
+}
+
+#assignSelect{
+    padding: 3px;
+    width:100%;
+    margin-bottom: 10px;
+}
+#assignSelect>select{
+    display:inline;
+    width:100%;
+    height: 35px;
+    font-size:inherit;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    margin:0px;
+}
+#newproject-container>div{
+    margin-top: 20px;
+}
+
+.assignRemBtn{
+    background-color: white;
+    border-radius: 8px;
+
+}
+
+
+.assignGroup{
+    margin-bottom: 5px;
+    padding:.375rem .75rem;
+
+}
+
+.verticalLine{
+    border-left: groove  ;
+    border-color: rgb(8, 209, 8);
+    width: 1px;
+    height: 100%;
+    display: inline;
+    margin-left:0px;
+    margin-right:2px;
+}
+#assignedDisplayer{
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    font-size: 1rem;
+}
+#assignedDisplayer:empty { 
+    border: none;
+}
+#assignIcon{
+    margin-right: 5px;
+}
+
+input{
+    margin-top: 1rem;
+}
+
+
+hr{
+    margin-top: 1px;
+}
