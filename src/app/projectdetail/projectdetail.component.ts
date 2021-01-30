@@ -26,6 +26,7 @@ export class ProjectdetailComponent implements OnInit {
       console.log(this.projectid)
       this.project = this.projectService.getProjectById(this.projectid);
     });
+
       this.todo=this.project.todoTasks;
       this.doing=this.project.doingTasks;
       this.done=this.project.doneTasks;

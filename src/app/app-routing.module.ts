@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ChatscreenComponent } from './chatscreen/chatscreen.component';
+import { DocsComponent } from './docs/docs.component';
 import { LoginComponent } from './login/login.component';
+import { ManageprojectComponent } from './manageproject/manageproject.component';
 import { NewprojectComponent } from './newproject/newproject.component';
 import { NewtaskComponent } from './newtask/newtask.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
@@ -28,9 +30,12 @@ const routes: Routes = [
   },
   {
     path: 'project', component: ProjectdetailComponent, children: [
-      { path: ":id", component: ProjectdetailComponent },
+      { path: ":id", component: ProjectdetailComponent},
     ]
   },
+  { path:'project/:id/manage', component: ManageprojectComponent},
+  ,
+  { path:'project/:id/docs', component: DocsComponent},
   { path: "project/:id/newtask", component: NewtaskComponent },
   { path: '**', component: PagenotfoundComponent }
 ];

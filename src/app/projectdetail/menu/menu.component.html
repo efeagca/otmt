@@ -1,5 +1,5 @@
 <div class="navbar navbar-light bg-light">
     <button class="btn btn-light nav-bar-item">Tasks</button>
-    <button class="btn btn-light nav-bar-item">Documents</button>
-    <button class="btn btn-light nav-bar-item">Manage Project</button>
+    <a [routerLink]="['/project',projectid,'docs']"><button class="btn btn-light nav-bar-item">Documents</button></a>
+    <a [routerLink]="['/project',projectid,'manage']"></a><button class="btn btn-light nav-bar-item">Manage Project</button></a>
 </div>

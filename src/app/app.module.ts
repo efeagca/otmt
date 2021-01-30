@@ -23,6 +23,9 @@ import { ProjectdetailComponent } from './projectdetail/projectdetail.component'
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { VideoconferenceComponent } from './videoconference/videoconference.component';
 import { MenuComponent } from './projectdetail/menu/menu.component';
+import { DocsComponent } from './docs/docs.component';
+import { ManageprojectComponent } from './manageproject/manageproject.component';
+import { UpdatetaskComponent } from './updatetask/updatetask.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { MenuComponent } from './projectdetail/menu/menu.component';
     ProjectdetailComponent,
     PagenotfoundComponent,
     VideoconferenceComponent,
-    MenuComponent
+    MenuComponent,
+    DocsComponent,
+    ManageprojectComponent,
+    UpdatetaskComponent
   ],
   imports: [
     
