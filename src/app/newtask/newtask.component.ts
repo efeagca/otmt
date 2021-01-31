@@ -26,6 +26,7 @@ export class NewtaskComponent implements OnInit {
   public priority=1;
   public description;
   public projectid;
+  percentage="100%";
 
   constructor(calendar: NgbCalendar, private route:ActivatedRoute, private projectService:ProjectService, private router:Router) { 
       this.fromDate = calendar.getToday();
@@ -40,7 +41,6 @@ export class NewtaskComponent implements OnInit {
 
     let project = this.projectService.getProjectById(this.projectid);
     this.projectName=project.name;
-    this.description=project.description;
     this.teamMembers=project.teamMembers;
     this.unSelectedTeamMembers=project.teamMembers;
 
@@ -101,7 +101,8 @@ export class NewtaskComponent implements OnInit {
     }
 
     let task = new Task();
-    task.assignment=this.selectedTeamMembers;
+    //task.assignment={user:this.selectedTeamMembers[0],percentage:this.percentage};
+    task.assignment=this.selectedTeamMembers
     task.toDate=`${this.toDate.day}/${this.toDate.month}/${this.toDate.year}`;
     task.fromDate=`${this.fromDate.day}/${this.fromDate.month}/${this.fromDate.year}`;
     task.projectid=this.projectid
@@ -109,7 +110,6 @@ export class NewtaskComponent implements OnInit {
     task.title=this.title;
     task.description=this.description;
     task.state=this.state;
-    console.log(task);
 
     this.projectService.createTask(task);
     this.router.navigate(['project'],{queryParams:{id:this.projectid}});

@@ -12,6 +12,7 @@ import { MytasksComponent } from './projects/mytasks/mytasks.component';
 import { ProjectComponent } from './projects/project/project.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { RegisterComponent } from './register/register.component';
+import { UpdatetaskComponent } from './updatetask/updatetask.component';
 import { VideoconferenceComponent } from './videoconference/videoconference.component';
 
 
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path:'project/:id/manage', component: ManageprojectComponent},
   { path:'project/:id/docs', component: DocsComponent},
   { path: "project/:id/newtask", component: NewtaskComponent },
+  { path: "project/:id/task/:taskid", component: UpdatetaskComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 

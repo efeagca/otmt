@@ -1,3 +1,5 @@
+<app-friendlist></app-friendlist>
+
 <div id="newtask-container" class="container">
     <h3 class="d-inline-block">New Task</h3>
     <hr>
@@ -21,10 +23,10 @@
             <div id="effortSelect">
                 <p style="display:inline;margin-right: 5px;">Effort</p>
                 <select  class="form-select" >
-                    <option >100% </option>
-                    <option >75% </option>
-                    <option >50% </option>
-                    <option >25% </option>
+                    <option value="100%" selected>100% </option>
+                    <option value="75%">75% </option>
+                    <option value="50%">50% </option>
+                    <option value="25%">25% </option>
                     <i class="fas fa-user"></i>
                 </select>
             </div>
@@ -43,9 +45,7 @@
             <option value="Done">Done</option>
         </select>
         <div class="verticalLine" > </div>
-        <label style="margin-right: 20px;">Project</label>
-        <label> 1</label>
-        <div class="verticalLine" > </div>
+    
         <label for="taskStateInput d-inline-block" style="margin-right: 20px;">Priority</label>
         <select [(ngModel)]="priority" class="form-select d-inline-block" id="priorSelect" aria-label="Default select example">
             <option selected value="1">1</option>

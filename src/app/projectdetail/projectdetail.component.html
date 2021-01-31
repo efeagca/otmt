@@ -12,7 +12,7 @@
       <div cdkDropList [cdkDropListData]="todo" class="task-list" (cdkDropListDropped)="drop($event)">
 
         <div id="t.id" class="task" cdkDrag *ngFor="let t of todo">
-          <h4>{{t.title}}<i class="fas fa-edit" style="float:right;"></i></h4>
+          <h4>{{t.title}}<a [routerLink]="['/project',projectid,'task',t.id]"><i class="fas fa-edit" style="float:right;"></i></a></h4>
           <label><b>Priority:</b></label>
           <p class="d-inline ml-1">{{t.priority}}</p>
           <br>
@@ -27,7 +27,7 @@
       <div cdkDropList [cdkDropListData]="doing" class="task-list" (cdkDropListDropped)="drop($event)">
 
         <div id="t.id" class="task" cdkDrag *ngFor="let t of doing">
-          <h4>{{t.title}}<i class="fas fa-edit" style="float:right;"></i></h4>
+          <h4>{{t.title}}<a [routerLink]="['/project',projectid,'task',t.id]"><i class="fas fa-edit" style="float:right;"></i></a></h4>
           <label><b>Priority:</b></label>
           <p class="d-inline ml-1">{{t.priority}}</p>
           <br>
@@ -42,7 +42,7 @@
       <h4 class="text-muted">Done</h4>
       <div class="task-list" cdkDropList [cdkDropListData]="done" class="task-list" (cdkDropListDropped)="drop($event)">
         <div id="t.id" class="task" cdkDrag *ngFor="let t of done">
-          <h4>{{t.title}}<i class="fas fa-edit" style="float:right;"></i></h4>
+          <h4>{{t.title}}<a [routerLink]="['/project',projectid,'task',t.id]"><i class="fas fa-edit" style="float:right;"></i></a></h4>
           <label><b>Priority:</b></label>
           <p class="d-inline ml-1">{{t.priority}}</p>
           <br>
